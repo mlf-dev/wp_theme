@@ -31,7 +31,11 @@
                         <?php bloginfo('description') ?><!--affiche le slogan du site (reglages>général>slogan)-->
                     </p>
                     <div class="col-12">
-                        <!--Menu de navigation-->
+                        <!--Zone de menu de navigation-->
+                        <?php wp_nav_menu(array(
+                                'theme_location'    => 'primary', // identifiant du menu déclaré dans functions.php
+                                'menu_class'        => 'navbar-nav' // ajout d'une ou plusieurs class
+                        )); ?>
                     </div>
                 </div> <!--fin div.row-->
             </div><!--fin div.container-->

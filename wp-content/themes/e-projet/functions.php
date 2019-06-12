@@ -1,6 +1,6 @@
 <?php
 
-// Création de zones de widgets
+// Création de zones de widgets :
 function eprojet_init_widgets(){
 
     register_sidebar(array(
@@ -37,3 +37,12 @@ function eprojet_init_widgets(){
 
 add_action('widgets_init', 'eprojet_init_widgets'); // ajoute une action au moment où il initialise les widgets au démarrage de la page, on lui indique d'accrocher et d'exécuter la fonction eprojet_init_widgets par le core de WP. Widgets_init s'appelle un HOOK (crocher en français, car y sont accrochés les fonctions du core de WP ainsi que la nôtre. Elles s'exécutent ensemble à l'exécution de ce hook
 
+// Création des zones de menu :
+function eprojet_init_menus(){
+
+    register_nav_menu('primary','Menu principal dans le header'); // premier argument : identifiant, deuxième : nom dans le back-office. Création d'une zone de menu identifiée 'primary' nommée dans le back-office 'menu_principal'
+
+    register_nav_menu('footer-right', 'Zone de menu dans la partie droite du footer');
+};
+
+add_action('init', 'eprojet_init_menus'); // exécution de la fonction eprojet_init_menus dans le hook 'init' de WP qui correspond au moment où le CMS s'initialise

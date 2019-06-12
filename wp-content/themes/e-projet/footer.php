@@ -11,7 +11,11 @@
             <div class="col-lg-4">
                 <p>&copy; Mes petites annonces - 2019</p>
             </div>
-            <div class="col-lg-4"></div>
+            <div class="col-lg-4">
+                <?php wp_nav_menu(array(
+                        'theme_location' => 'footer-right'
+                )); ?>
+            </div>
 
         </div><!--fin div.row-->
     </div><!--fin div.container-->
